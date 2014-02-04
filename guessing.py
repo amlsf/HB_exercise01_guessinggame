@@ -10,13 +10,16 @@ print "Try to guess my number."
 answer = randint(1,100) #randint is inclusive of 1 to 100
 print answer
 
-while guess != answer:
-    guess = raw_input("Your guess?")
+guess = int(raw_input("Your guess?"))
 
+while guess != answer:
+    guess = int(guess)
     if guess < answer:
         print "Your guess is too low, try again"
+        guess = raw_input("Your guess?")
     elif guess > answer:
         print "Your guess is too high, try again"
+        guess = raw_input("Your guess?")
     else: 
         print "Well done, %s" % name,
         print "You found my number in x tries!"
